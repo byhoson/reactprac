@@ -1,0 +1,1 @@
+# this is the clone of movie app from nomad academy react course
