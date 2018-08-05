@@ -1,19 +1,29 @@
 import React, { Component } from 'react'
+import './Movie.css'
 
 class Movie extends Component {
     render() {
         return (
             <div>
-                <p>some movie here</p>
-                <MoviePoster />
+                <p>{this.props.title}</p>
+                <MoviePoster img={this.props.img} />
             </div>
         )
     }
 }
 
 class MoviePoster extends Component {
+
+    componentWillMount() {
+        console.log('will mount')
+    }
+
+    componentDidMount() {
+        console.log('did mount')
+    }
+
     render() {
-        return <img src="https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" />
+        return <img src={this.props.img} />
     }
 }
 
