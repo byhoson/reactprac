@@ -14,16 +14,29 @@ class Movie extends Component {
 
 class MoviePoster extends Component {
 
-    componentWillMount() {
-        console.log('will mount')
+    constructor() {
+        super()
+        this.state = {
+            greeting: 'hello'
+        }
     }
 
+
     componentDidMount() {
-        console.log('did mount')
+        setTimeout(() => {
+            this.setState({
+                greeting: 'hello again'
+            })
+        }, 1000)
     }
 
     render() {
-        return <img src={this.props.img} />
+        return (
+            <div>
+                <p>{this.state.greeting}</p>
+                <img src={this.props.img} />
+            </div>
+        )
     }
 }
 
